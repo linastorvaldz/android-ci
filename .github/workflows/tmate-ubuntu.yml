@@ -1,0 +1,17 @@
+name: ambatukam
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ambatukam:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: setup
+        run: |
+          sudo apt update -y
+          sudo apt install tmate -y
+
+      - name: Generate tmate ssh link
+        run: |
+          tmate -F
