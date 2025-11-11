@@ -17,7 +17,9 @@ jobs:
       - name: Clone kernel source
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: git clone https://linastorvaldz:${GH_TOKEN}@github.com/linastorvaldz/kernel_xiaomi_gold gold
+        run: |
+          git clone https://linastorvaldz:${GH_TOKEN}@github.com/linastorvaldz/kernel_xiaomi_gold gold
+          git clone https://linastorvaldz:${GH_TOKEN}@github.com/linastorvaldz/mtk_kernel_modules
 
       - name: Generate tmate ssh link
         run: |
