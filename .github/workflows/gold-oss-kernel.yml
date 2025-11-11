@@ -1,4 +1,4 @@
-name: ambatukam
+name: Gold OSS Kernel Project
 
 on:
   workflow_dispatch:
@@ -13,6 +13,11 @@ jobs:
           sudo apt install tmate -y
           git config --global user.name "linastorvaldz"
           git config --global user.email "creamylofly@gmail.com"
+
+      - name: Clone kernel source
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: git clone https://linastorvaldz:${GH_TOKEN}@github.com/linastorvaldz/kernel_xiaomi_gold gold
 
       - name: Generate tmate ssh link
         run: |
