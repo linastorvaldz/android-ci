@@ -1,0 +1,19 @@
+name: Last Night on Earth
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ambatukam:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: setup
+        run: |
+          sudo apt update -y
+          sudo apt install tmate repo -y
+          git config --global user.name "linastorvaldz"
+          git config --global user.email "creamylofly@gmail.com"
+
+      - name: Generate tmate ssh link
+        run: |
+          tmate -F
