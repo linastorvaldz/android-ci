@@ -1,0 +1,24 @@
+name: She knows that im the best
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ambatukam:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: setup
+        run: |
+          sudo apt update -y
+          sudo apt install tmate repo -y
+          git config --global user.name "linastorvaldz"
+          git config --global user.email "creamylofly@gmail.com"
+
+      - name: Sync kernel manifest
+        run: |
+          repo init --depth=1 -u https://github.com/linastorvaldz/kernel_manifest.git -b gold-s-oss
+          repo sync -j$(nproc)
+
+      - name: Generate tmate ssh link
+        run: |
+          tmate -F
