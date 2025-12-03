@@ -42,7 +42,7 @@ jobs:
           sudo apt update
           sudo apt install -y git curl build-essential bc bison flex libssl-dev \
             libelf-dev libncurses-dev lld python3 dwarves zip
-          
+
           git config --global user.name "Bot"
           git config --global user.email "bot@example.com"
 
@@ -61,8 +61,8 @@ jobs:
                 clone_kernel_common "deprecated/$branch"
               fi
           fi
-          cd source
-          git fetch --unshallow || true
+#          cd source
+#          git fetch --unshallow || true
 
       - name: Setup Clang 19
         run: |
