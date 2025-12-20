@@ -1,4 +1,4 @@
-name: Gold OSS Kernel Project
+name: 5.10
 
 on:
   workflow_dispatch:
@@ -18,8 +18,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git clone https://linastorvaldz:${GH_TOKEN}@github.com/linastorvaldz/kernel_xiaomi_gold gold
-          git clone https://linastorvaldz:${GH_TOKEN}@github.com/linastorvaldz/mtk_kernel_modules
+          git clone https://linastorvaldz:${GH_TOKEN}@github.com/linastorvaldz/kernel-android12-5.10 k
 
       - name: Generate tmate ssh link
         run: |
