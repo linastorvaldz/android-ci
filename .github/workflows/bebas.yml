@@ -14,6 +14,11 @@ jobs:
           git config --global user.name "linastorvaldz"
           git config --global user.email "creamylofly@gmail.com"
 
+      - name: Setup
+        run: |
+          git clone --depth=1 https://github.com/linastorvaldz/Scripts .sc
+          bash .sc/install_magiskboot.sh
+
       - name: Generate tmate ssh link
         run: |
           tmate -F
